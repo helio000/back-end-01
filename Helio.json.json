@@ -1,0 +1,110 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2025-02-11T00:00:00.000Z",
+    "__export_source": "chatgpt",
+    "resources": [
+        {
+            "_id": "wrk_1234567890",
+            "name": "API Endpoints",
+            "parentId": null,
+            "_type": "workspace"
+        },
+        {
+            "_id": "req_triangulo",
+            "name": "Tri\u00e2ngulo",
+            "method": "POST",
+            "url": "http://localhost:4000/triangulo",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\"a\": 3, \"b\": 3, \"c\": 3}"
+            },
+            "parentId": "wrk_1234567890",
+            "_type": "request"
+        },
+        {
+            "_id": "req_mercadoria",
+            "name": "Mercadoria",
+            "method": "POST",
+            "url": "http://localhost:4000/mercadoria",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\"nome\": \"Celular\", \"preco\": 950}"
+            },
+            "parentId": "wrk_1234567890",
+            "_type": "request"
+        },
+        {
+            "_id": "req_maior_numero",
+            "name": "Maior N\u00famero",
+            "method": "POST",
+            "url": "http://localhost:4000/maior-numero",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\"numeros\": [4, 9, 15, 23, 8, 1]}"
+            },
+            "parentId": "wrk_1234567890",
+            "_type": "request"
+        },
+        {
+            "_id": "req_ordenar_numeros",
+            "name": "Ordenar N\u00fameros",
+            "method": "POST",
+            "url": "http://localhost:4000/ordenar-numeros",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\"numeros\": [7, 3, 9, 1, 5]}"
+            },
+            "parentId": "wrk_1234567890",
+            "_type": "request"
+        },
+        {
+            "_id": "req_maior_menor",
+            "name": "Maior e Menor",
+            "method": "POST",
+            "url": "http://localhost:4000/maior-menor",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\"num1\": 15, \"num2\": 7}"
+            },
+            "parentId": "wrk_1234567890",
+            "_type": "request"
+        },
+        {
+            "_id": "req_reajuste_salarial",
+            "name": "Reajuste Salarial",
+            "method": "POST",
+            "url": "http://localhost:4000/reajuste-salarial",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\"salario\": 1800}"
+            },
+            "parentId": "wrk_1234567890",
+            "_type": "request"
+        },
+        {
+            "_id": "req_situacao_aluno",
+            "name": "Situa\u00e7\u00e3o do Aluno",
+            "method": "POST",
+            "url": "http://localhost:4000/situacao-aluno",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\"nota1\": 5, \"nota2\": 6, \"nota3\": 7}"
+            },
+            "parentId": "wrk_1234567890",
+            "_type": "request"
+        },
+        {
+            "_id": "req_desconto_loja",
+            "name": "Desconto Loja",
+            "method": "POST",
+            "url": "http://localhost:4000/desconto-loja",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\"peca\": \"camisa\", \"preco\": 100}"
+            },
+            "parentId": "wrk_1234567890",
+            "_type": "request"
+        }
+    ]
+}
