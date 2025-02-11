@@ -1,0 +1,130 @@
+exercicio 1
+const express = require('express');
+const cors = require('cors');
+const app = express();
+app.use(cors());
+app.use(express.json());
+app.post('/desconto', (req, res) => {
+    const { preco, salario } = req.body;
+    let desconto = 0;
+    if (salario <= 1212) {
+        desconto = salario * 0.075;
+    } else if (salario <= 2427.35) {
+        desconto = salario * 0.09;
+    } else if (salario <= 3641.03) {
+        desconto = salario * 0.12;
+    } else if (salario <= 7087.22) {
+        desconto = salario * 0.14;
+    } else {
+        desconto = 7087.22 * 0.14;
+    }
+    let precoComDesconto = preco - desconto;
+    res.json({ preco, desconto, precoComDesconto });
+});
+
+app.listen(4000, () => {
+    console.log('Servidor rodando em http://localhost:4000');
+});
+
+exercicio 2
+app.post('/tipo-triangulo', (req, res) => {
+    const { a, b, c } = req.body;
+
+    if (a === b && b === c) {
+        res.json({ tipo: 'EQUILÁTERO' });
+    } else if (a !== b && b !== c && a !== c) {
+        res.json({ tipo: 'ESCALENO' });
+    } else {
+        res.json({ tipo: 'ISÓSCELES' });
+    }
+});
+
+exercicio 3
+app.post('/aumento-preco', (req, res) => {
+    const { nome, preco } = req.body;
+    let aumento = 0;
+
+    if (preco < 1000) {
+        aumento = preco * 0.05;
+    } else {
+        aumento = preco * 0.07;
+    }
+
+    let precoFinal = preco + aumento;
+    res.json({ nome, precoFinal });
+});
+
+exercicio 4
+app.post('/maior-numero', (req, res) => {
+    const { num1, num2, num3, num4, num5, num6 } = req.body;
+    const maior = Math.max(num1, num2, num3, num4, num5, num6);
+    res.json({ maior });
+});
+
+exercicio 5
+app.post('/ordem-crescente', (req, res) => {
+    const { num1, num2, num3, num4, num5 } = req.body;
+    const numeros = [num1, num2, num3, num4, num5];
+    numeros.sort((a, b) => a - b);
+    res.json({ numeros });
+});
+
+exercicio 6
+app.post('/maior-menor', (req, res) => {
+    const { num1, num2 } = req.body;
+    const maior = Math.max(num1, num2);
+    const menor = Math.min(num1, num2);
+    res.json({ maior, menor });
+});
+
+exercicio 7
+    const { salarioAtual } = req.body;
+    let reajuste = 0;
+
+    if (salarioAtual >= 1500 && salarioAtual < 1750) {
+        reajuste = salarioAtual * 0.15;
+    } else if (salarioAtual >= 1750 && salarioAtual < 2000) {
+        reajuste = salarioAtual * 0.12;
+    } else if (salarioAtual >= 2000 && salarioAtual < 3000) {
+        reajuste = salarioAtual * 0.09;
+    } else if (salarioAtual >= 3000) {
+        reajuste = salarioAtual * 0.06;
+    }
+
+    let salarioReajustado = salarioAtual + reajuste;
+    res.json({ salarioAtual, reajuste, salarioReajustado });
+});
+
+exercicio 8
+app.post('/situacao-aluno', (req, res) => {
+    const { nota1, nota2, nota3 } = req.body;
+    const media = (nota1 + nota2 + nota3) / 3;
+
+    let situacao = '';
+    if (media >= 6) {
+        situacao = 'aprovado';
+    } else if (media >= 4) {
+        situacao = 'recuperação';
+    } else {
+        situacao = 'reprovado';
+    }
+
+    res.json({ media, situacao });
+});
+
+exercicio 9
+app.post('/desconto-loja', (req, res) => {
+    const { nomePeca, preco } = req.body;
+    let desconto = 0;
+
+    if (nomePeca.toLowerCase() === 'camisa') {
+        desconto = preco * 0.20;
+    } else if (nomePeca.toLowerCase() === 'bermuda') {
+        desconto = preco * 0.10;
+    } else if (nomePeca.toLowerCase() === 'calça') {
+        desconto = preco * 0.15;
+    }
+
+    let precoFinal = preco - desconto;
+    res.json({ nomePeca, precoFinal });
+});
